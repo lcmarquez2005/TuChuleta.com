@@ -1,0 +1,316 @@
+:root {
+    --bg-color-secondary: #c7c7c7;
+    --navbar: #f02121e3;
+    --footer: #9c5353;
+    --bg-color: #F7F7F7;
+    --azul-verdosoFooter: #077c76;
+    --azul-verdoso: #189aa4;
+    --azul-verdosoOscuro: #12737ca2;
+    --secondary: #eb3434;
+    --primary: #f9a356;
+    --fuentePrincipal: 'M PLUS 1 Code', sans-serif;
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--fuentePrincipal);
+    font-weight: 550;
+    background-color: var(--bg-color);
+
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 2.2rem;
+}
+p, li, input,a {
+    font-size: 2rem;
+}
+
+form,fieldset,input {
+    border: none;
+    font-family: var(--fuentePrincipal);
+}
+
+h1,h2,h3 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul {
+    line-height: 1.5;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.logo {
+
+}
+.logo--secundario {
+    font-weight: bold;
+}
+.campos-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+.w-100 {
+    max-width: 100%;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.centrar-texto-always {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .centrar-texto {
+        text-align: center;
+    }
+}
+
+.contenedor {
+    background-color: var(--primary);
+    padding: 1rem;
+/*     border-radius: 2rem; */
+    border: none;
+    margin: 1rem 1rem;
+    width: 60rem, 100%;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    border-radius: 3px;
+}
+.boton-submit {
+    font-weight: bold;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--secondary);
+    margin-bottom: 0;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+.resultado {
+    text-align: center;
+    background-color: green;
+    font-weight: bold;
+    padding: 1.5rem;
+    width: 100%;
+    text-transform: uppercase;
+/*     border-radius: 2rem; */
+    border: none;
+    border-radius: 3px;
+}
+
+.contenido-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Header */    /* FOOTER */
+
+.header, .footer {
+    background-color: var(--azul-verdoso);
+/*     background: -moz-linear-gradient(top, rgba(0,163,141,1) 0%, rgba(7,146,130,1) 4%, rgba(7,146,130,1) 96%, rgba(0,163,141,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,163,141,1)), color-stop(4%, rgba(7,146,130,1)), color-stop(96%, rgba(7,146,130,1)), color-stop(100%, rgba(0,163,141,1)));
+    background: -webkit-linear-gradient(top, rgba(0,163,141,1) 0%, rgba(7,146,130,1) 4%, rgba(7,146,130,1) 96%, rgba(0,163,141,1) 100%);  */
+    display: flex;
+    flex-direction: column;
+/*     border: 3px solid black; */
+}
+
+.header__titulo, .footer__titulo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.footer__titulo {
+    padding-bottom: 1rem;
+}
+.header__navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+.navbar__enlace {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    display: block;
+}
+.navbar__enlace--activo {
+    background-color: var(--azul-verdosoOscuro);
+}
+
+.footer {
+    background-color: var(--azul-verdoso);
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .header, .footer {
+        display: grid;
+        grid-template-columns: 30%  70%;
+
+        gap: 1rem;
+    }
+    .header__titulo, .footer__titulo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem auto;
+    }
+    .footer__titulo {
+        padding: .5rem;
+    }
+    .header__navbar {
+        flex-direction: row;
+        justify-content: right;
+        margin-right: 1rem;
+    }
+    .navbar__enlace{
+        display: auto;
+        width: auto;
+
+    }
+}
+
+
+/* Contenido Principal */
+.main {
+    width: 100%;
+    margin: auto auto 5rem auto;
+    
+}
+.main__bg--fisica {
+    background-image: url('../img/Fisica.jpg');
+    height: 40rem;
+}
+.main__bg--index {
+    background-image: url('../img/Programacion-banner.jpg');
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+
+}
+.main__bg--dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+.main__titulo {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+.main__subtitulo,
+.main__formulas {
+    margin: 2rem auto;
+}
+.main__subtitulo {
+    margin-bottom: 0;
+}
+
+.main__info,
+.lista-formulas {
+    display: flex;
+    justify-content: justify;
+    list-style: none;
+    margin: 1rem;
+}
+.main__info {
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    width: min(70rem, 98%);/*! dsfsd */
+}
+.main__imagen {
+
+    width: 100%;
+    position: center;
+}
+@media (min-width: 768px) {
+    .main__formulas {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .main__imagen {
+        object-fit: none;
+        height: 30rem;
+    }
+}
+
+/* Formulario Coulomb */
+
+.leyCoulomb {
+    width: min(80rem, 98%);
+    margin: 0 auto;
+    padding: 2rem;
+}
+.leyCoulomb__inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.leyCoulomb__input {
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+/*     border-radius: 2rem; */
+    border: none;
+    background-color: var(--bg-color);
+    margin: 1rem auto;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .leyCoulomb__inputs {
+        flex-direction: row;
+        width: 100%;
+    }
+    .leyCoulomb__input {
+        margin-right: 1rem;
+        width: 25%;
+    }
+}
+
+.leyCoulomb__input:last-of-type {
+    margin-right: 0;
+}
