@@ -70,25 +70,18 @@ let F1 = { X1,X2,X3 },
     F2 = { Y1,Y2,Y3 },
     F3 = { Z1,Z2,Z3 } */
 
+
 function suma3x3Matriz( X1,X2,X3,Y1,Y2,Y3,Z1,Z2,Z3,A1,A2,A3,B1,B2,B3, C1,C2,C3) {
-    let     M1 = [ X1,X2,X3, Y1,Y2,Y3,   Z1,Z2,Z3 ],
-            M2 = [ A1,A2,A3, B1,B2,B3,   C1,C2,C3 ],
-            i = 0,F1 = 0,F2 = 3,F3 = 6,Mt, T;
-        
+    let     M1 = [ X1,X2,X3, Y1,Y2,Y3,   Z1,Z2,Z3 ];
+    let     M2 = [ A1,A2,A3, B1,B2,B3,   C1,C2,C3 ];
+    let     Mt = [  0 , 0 , 0,  0, 0, 0,    0, 0, 0 ];
+    
 
-    while (F1 < 3, F2 < 6, F3 < 9, T < 3) {
-
-        X1[F1] = M1[F1] + M2[F1];
-        X2[F2] = M1[F2] + M2[F2];
-        X3[F3] = M1[F3] + M2[F3];
-
-        
-
-        F1++;
-        F2++;
-        F3++;
+    for( let i = 0; i < 9; i++ ) {
+        Mt[i] = M1[i] + M2[i]; 
     }
-
+    return Mt;
+}
 
 
 
@@ -105,7 +98,7 @@ function suma3x3Matriz( X1,X2,X3,Y1,Y2,Y3,Z1,Z2,Z3,A1,A2,A3,B1,B2,B3, C1,C2,C3) 
         F3 = [M1[i] + M2[i]]
     }
     console.log(F1,F2,F3); */
-}
+
 /*
 M2 = [
     F1 = [  { X1: X1 },

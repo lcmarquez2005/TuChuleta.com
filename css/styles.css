@@ -47,6 +47,12 @@ form,fieldset,input {
     border: none;
     font-family: var(--fuentePrincipal);
 }
+input {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    outline: none;
+}    
 
 h1,h2,h3 {
     text-align: center;
@@ -96,15 +102,16 @@ a{
 
 .contenedor {
     background-color: var(--primary);
-    padding: 1rem;
-/*     border-radius: 2rem; */
     border: none;
-    margin: 1rem 1rem;
-    width: 60rem, 100%;
+
     -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
     border-radius: 3px;
+
+    width: min(80rem, 98%);
+    margin: 0 auto;
+    padding: 2rem;
 }
 .boton-submit {
     font-weight: bold;
@@ -281,9 +288,7 @@ a{
 /* Formulario Coulomb */
 
 .leyCoulomb {
-    width: min(80rem, 98%);
-    margin: 0 auto;
-    padding: 2rem;
+
 }
 .leyCoulomb__inputs {
     width: 100%;
@@ -292,25 +297,70 @@ a{
 
 }
 .leyCoulomb__input {
-    padding: 2rem 0 2rem 0;
-    text-align: center;
-/*     border-radius: 2rem; */
-    border: none;
+    padding: 2rem 0;
     background-color: var(--bg-color);
     margin: 1rem auto;
-    width: 100%;
 }
 @media (min-width: 768px) {
     .leyCoulomb__inputs {
         flex-direction: row;
-        width: 100%;
     }
     .leyCoulomb__input {
         margin-right: 1rem;
-        width: 25%;
+    }
+    .leyCoulomb__input:last-of-type {
+        margin-right: 0;
     }
 }
 
-.leyCoulomb__input:last-of-type {
-    margin-right: 0;
+
+
+/* MATRICES */
+.contenedor--matrices {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.matrices {
+    display: grid;
+    margin: 1rem auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.matrices__input {
+    width: 100%;
+    max-width: 8rem;
+}
+.matrices__input--botones {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    align-content: center;
+    text-align: center;
+}
+
+.matrices__input--boton {
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: var(--bg-color-secondary);
+}
+
+@media (min-width: 768px) {
+    .contenedor--matrices {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .matrices {
+        margin: 2rem auto;
+    }
+    .matrices__input--boton {
+        padding: 1rem 2rem;
+        border-radius: 50%;
+    }
+
 }
