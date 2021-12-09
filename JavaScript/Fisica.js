@@ -55,16 +55,16 @@ function fuerzaCoulomb() {
     let q2 = datos.q2C;
     let r = datos.radioC;
 
-    if( q1 && q2 && r !== 0 ){
+    if( q1 && q2 && r !== 0 && f == 0 ){
         resultado =  K * (q1 * q2) / r **2 + ' ' + 'Newton' + ' ' + '(N)';
 
-    } else if( f && q2 && r !== 0 ) {
+    } else if( f && q2 && r !== 0 && q1 == 0 ) {
         resultado =  f * r ** 2 / K * q2 + ' ' + 'Coulomb' + ' ' + '(C)';
 
-    } else if( f && q1 && r !== 0 ) {
+    } else if( f && q1 && r !== 0 && q2 == 0 ) {
         resultado =  f * r ** 2 / K * q1 + ' ' + 'Coulomb' + ' ' + '(C)';
 
-    } else if( f && q2 && q1 !== 0 ) {
+    } else if( f && q2 && q1 !== 0 && r == 0 ) {
         resultado = Math.sqrt( K * (q1 * q2) / f ) + ' ' + 'metros' + ' ' + '(m)' ;
 
     } else if ( r &&  f &&  q1 &&  q2 !== 0 ) {
