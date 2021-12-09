@@ -5,10 +5,12 @@
     --bg-color: #F7F7F7;
     --azul-verdosoFooter: #077c76;
     --azul-verdoso: #189aa4;
-    --azul-verdosoOscuro: #12737ca2;
+    --navbar-hover: #12737ca2;
     --secondary: #eb3434;
     --primary: #f9a356;
     --fuentePrincipal: 'M PLUS 1 Code', sans-serif;
+    --gris: #504f4f;
+    --bg-verde: #c5d8d5;
 }
 
 
@@ -75,12 +77,7 @@ a{
 .logo--secundario {
     font-weight: bold;
 }
-.campos-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-}
+
 .w-100 {
     max-width: 100%;
 }
@@ -100,16 +97,15 @@ a{
     }
 }
 
+
 .contenedor {
-    background-color: var(--primary);
+    background-color: var(--bg-verde);
     border: none;
-
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-    border-radius: 3px;
-
-    width: min(80rem, 98%);
+    /* -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75); */
+    /*-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75); */
+    /* box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75); */
+    /* border-radius: 3px; */
+    width: min(80rem, 100%);
     margin: 0 auto;
     padding: 2rem;
 }
@@ -117,7 +113,7 @@ a{
     font-weight: bold;
     width: 100%;
     padding: 1.5rem;
-    background-color: var(--secondary);
+    background-color: var(--azul-verdosoFooter);
     margin-bottom: 0;
     border-radius: 3px;
     text-transform: uppercase;
@@ -133,13 +129,10 @@ a{
     border: none;
     border-radius: 3px;
 }
-
-.contenido-principal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.error {
+    background-color: red;
 }
+
 
 
 /* Header */    /* FOOTER */
@@ -177,12 +170,11 @@ a{
     display: block;
 }
 .navbar__enlace--activo {
-    background-color: var(--azul-verdosoOscuro);
+    background-color: var(--navbar-hover);
 }
 
 .footer {
     background-color: var(--azul-verdoso);
-    margin-top: 2rem;
     margin-bottom: 0;
 }
 
@@ -192,6 +184,9 @@ a{
         grid-template-columns: 30%  70%;
 
         gap: 1rem;
+    }
+    .footer {
+        margin-top: 2rem;
     }
     .header__titulo, .footer__titulo{
         display: flex;

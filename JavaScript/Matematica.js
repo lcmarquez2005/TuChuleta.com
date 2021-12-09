@@ -83,6 +83,23 @@ function suma3x3Matriz( X1,X2,X3,Y1,Y2,Y3,Z1,Z2,Z3,A1,A2,A3,B1,B2,B3, C1,C2,C3) 
     return Mt;
 }
 
+const ovejas = [
+    { name: 'Noa', color: 'azul' },
+    { name: 'Euge', color: 'rojo' },
+    { name: 'Navidad', color: 'rojo' },
+    { name: 'Ki Na Ma', color: 'rojo'},
+    { name: 'AAAAAaaaaa', color: 'rojo' },
+    { name: 'Nnnnnnnn', color: 'rojo'}
+  ]
+
+
+
+ovejas.forEach(oveja => {
+
+    console.log(oveja.color.includes('rojo'));
+    
+});
+
 
 
 /* 

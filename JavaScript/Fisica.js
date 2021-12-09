@@ -27,6 +27,8 @@ const q2C = document.querySelector('#q2C');
 const radioC = document.querySelector('#radioC');
 let resultado = 0;
 
+let mostrar;/* Elemento que se mostrara con el RESULTADO FUERZA COULOMB */
+
 fuerzaC.addEventListener('input', leerDatos);
 q1C.addEventListener('input', leerDatos);
 q2C.addEventListener('input', leerDatos);
@@ -40,8 +42,7 @@ function leerDatos(e) {
 }
 
 function mostrarResultado() {
-    let mostrar = document.createElement('P');
-
+    mostrar = document.createElement('P');
     mostrar.textContent = resultado;
     mostrar.classList.add('resultado');
 
@@ -49,20 +50,30 @@ function mostrarResultado() {
 }
 
 function fuerzaCoulomb() {
-
     let f = datos.fuerzaC;
     let q1 = datos.q1C;
     let q2 = datos.q2C;
     let r = datos.radioC;
-    
-    if( f === null || f == false || f == 0 ){
+
+    if( q1 && q2 && r !== 0 ){
         resultado =  K * (q1 * q2) / r **2 + ' ' + 'Newton' + ' ' + '(N)';
-    } else if( q1 === 0 || q1 == null || q1 == false ) {
+
+    } else if( f && q2 && r !== 0 ) {
         resultado =  f * r ** 2 / K * q2 + ' ' + 'Coulomb' + ' ' + '(C)';
-    } else if( q2 === 0 || q2 == null || q2 == false ) {
+
+    } else if( f && q1 && r !== 0 ) {
         resultado =  f * r ** 2 / K * q1 + ' ' + 'Coulomb' + ' ' + '(C)';
-    } else {
+
+    } else if( f && q2 && q1 !== 0 ) {
         resultado = Math.sqrt( K * (q1 * q2) / f ) + ' ' + 'metros' + ' ' + '(m)' ;
+
+    } else if ( r &&  f &&  q1 &&  q2 !== 0 ) {
+        resultado = 'Debes dejar un SOLO campo Vacio que sera el Calculado';
+        mostrar.classList.add('error')
+
+    } else {
+        resultado = 'ERROR';
+        mostrar.classList.add('error');
     }
     console.log(resultado);
 }
