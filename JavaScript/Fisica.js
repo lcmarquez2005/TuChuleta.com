@@ -4,14 +4,17 @@ const K = 9 * Math.pow(10, 9);
 
 //Fuerza en Base a cargas y Distancia
 const formC = document.querySelector('#formularioCoulomb');
+const formReset = document.querySelector('#formReset');
 formC.addEventListener('submit', function(e) {
     e.preventDefault();
 
     fuerzaCoulomb();
 
-    console.log('enviando...');
+
     mostrarResultado();
 })
+
+
 
 const datos = {
     fuerzaC: 0,
@@ -40,9 +43,9 @@ function leerDatos(e) {
     datos[e.target.id] = parseFloat(datos[e.target.id]);
     console.log(datos);
 }
-
-function mostrarResultado() {
     mostrar = document.createElement('P');
+function mostrarResultado() {
+
     mostrar.textContent = resultado;
     mostrar.classList.add('resultado');
 
@@ -57,7 +60,7 @@ function fuerzaCoulomb() {
 
     if( q1 && q2 && r !== 0 && f == 0 ){
         resultado =  K * (q1 * q2) / r **2 + ' ' + 'Newton' + ' ' + '(N)';
-
+        
     } else if( f && q2 && r !== 0 && q1 == 0 ) {
         resultado =  f * r ** 2 / K * q2 + ' ' + 'Coulomb' + ' ' + '(C)';
 
@@ -69,14 +72,23 @@ function fuerzaCoulomb() {
 
     } else if ( r &&  f &&  q1 &&  q2 !== 0 ) {
         resultado = 'Debes dejar un SOLO campo Vacio que sera el Calculado';
-        mostrar.classList.add('error')
 
     } else {
         resultado = 'ERROR';
-        mostrar.classList.add('error');
     }
     console.log(resultado);
 }
+
+formReset.addEventListener('click', function() {
+    console.log('click')
+    fuerzaC.value = '';
+    q1C.value = '';
+    q2C.value = '';
+    radioC.value = '';
+
+    mostrar.remove();
+
+})
 
 
 //  Diferencia Potencial

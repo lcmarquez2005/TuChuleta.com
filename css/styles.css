@@ -3,7 +3,7 @@
     --navbar: #f02121e3;
     --footer: #9c5353;
     --bg-color: #F7F7F7;
-    --azul-verdosoFooter: #077c76;
+    --azul-verdoso: #077c76;
     --azul-verdoso: #189aa4;
     --navbar-hover: #12737ca2;
     --secondary: #eb3434;
@@ -44,7 +44,10 @@ h3 {
 p, li, input,a {
     font-size: 2rem;
 }
-
+form,fieldset {
+    margin: 0;
+    padding: 0;
+}
 form,fieldset,input {
     border: none;
     font-family: var(--fuentePrincipal);
@@ -74,7 +77,7 @@ a{
 .logo {
 
 }
-.logo--secundario {
+.negrita {
     font-weight: bold;
 }
 
@@ -109,18 +112,25 @@ a{
     margin: 0 auto;
     padding: 2rem;
 }
-.boton-submit {
+.boton-submit,
+.boton-reset {
     font-weight: bold;
     width: 100%;
     padding: 1.5rem;
-    background-color: var(--azul-verdosoFooter);
+    background-color: var(--azul-verdoso);
     margin-bottom: 0;
     border-radius: 3px;
     text-transform: uppercase;
 }
+.boton-submit {
+    flex: 3;
+}
+.boton-reset {
+    flex: 1;
+}
 .resultado {
     text-align: center;
-    background-color: green;
+    background-color: red;
     font-weight: bold;
     padding: 1.5rem;
     width: 100%;
@@ -129,10 +139,6 @@ a{
     border: none;
     border-radius: 3px;
 }
-.error {
-    background-color: red;
-}
-
 
 
 /* Header */    /* FOOTER */
@@ -289,22 +295,16 @@ a{
     width: 100%;
     display: flex;
     flex-direction: column;
-
+    gap: 1rem;
+    margin-top: 1rem;
 }
 .leyCoulomb__input {
     padding: 2rem 0;
     background-color: var(--bg-color);
-    margin: 1rem auto;
 }
 @media (min-width: 768px) {
     .leyCoulomb__inputs {
         flex-direction: row;
-    }
-    .leyCoulomb__input {
-        margin-right: 1rem;
-    }
-    .leyCoulomb__input:last-of-type {
-        margin-right: 0;
     }
 }
 
