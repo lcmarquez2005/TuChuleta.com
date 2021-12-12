@@ -5,7 +5,7 @@
     --bg-color: #F7F7F7;
     --azul-verdoso: #077c76;
     --azul-verdoso: #189aa4;
-    --navbar-hover: #12737ca2;
+    --navbar-hover: #12737c;
     --secondary: #eb3434;
     --primary: #f9a356;
     --fuentePrincipal: 'M PLUS 1 Code', sans-serif;
@@ -90,6 +90,7 @@ a{
     align-items: center;
     justify-content: center;
 }
+
 .centrar-texto-always {
     text-align: center;
 }
@@ -100,7 +101,11 @@ a{
     }
 }
 
-
+.bg--dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 .contenedor {
     background-color: var(--bg-verde);
     border: none;
@@ -144,7 +149,6 @@ a{
 /* Header */    /* FOOTER */
 
 .header, .footer {
-    background-color: var(--azul-verdoso);
 /*     background: -moz-linear-gradient(top, rgba(0,163,141,1) 0%, rgba(7,146,130,1) 4%, rgba(7,146,130,1) 96%, rgba(0,163,141,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,163,141,1)), color-stop(4%, rgba(7,146,130,1)), color-stop(96%, rgba(7,146,130,1)), color-stop(100%, rgba(0,163,141,1)));
     background: -webkit-linear-gradient(top, rgba(0,163,141,1) 0%, rgba(7,146,130,1) 4%, rgba(7,146,130,1) 96%, rgba(0,163,141,1) 100%);  */
@@ -152,40 +156,70 @@ a{
     flex-direction: column;
 /*     border: 3px solid black; */
 }
+.header__bg--fisica, 
+.header__bg--matematica {
+    background-image: url('../img/Fisica.jpg');
+    height: 40rem;
+}
+.header__bg--index {
+    background-image: url('../img/Programacion-banner.jpg');
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+
+.footer {
+    background-color: var(--navbar-hover);
+}
 
 .header__titulo, .footer__titulo {
-    padding-top: 1rem;
+    padding-top: 1rem;    
+    color: white;
     padding-bottom: 1rem;
 }
 .footer__titulo {
-    padding-bottom: 1rem;
+    color: black;
+
 }
-.header__navbar{
+.header__navbar, .footer__navbar{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-transform: uppercase;
-    font-weight: 600;
+}
+.header__texto {
+    flex-direction: auto;
+    margin-top: 5rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 550;
 }
 
-
-.navbar__enlace {
+.navbar__enlace, .navbar__enlaceFooter {
     width: 100%;
     text-align: center;
     padding: 1.5rem;
     display: block;
+    color: white;
+}
+.navbar__enlaceFooter {
+    color: black;
+    font-weight: bold;
 }
 .navbar__enlace--activo {
-    background-color: var(--navbar-hover);
+    text-decoration: solid underline white 2px;
+}
+.navbar__enlaceFooter--activo {
+    text-decoration: solid underline rgba(0, 0, 0, 0.711) 3px;
+    text-decoration: ;
 }
 
-.footer {
-    background-color: var(--azul-verdoso);
-    margin-bottom: 0;
-}
+
 
 @media (min-width: 768px) {
-    .header, .footer {
+    .header-grid, .footer-grid {
         display: grid;
         grid-template-columns: 30%  70%;
 
@@ -204,15 +238,18 @@ a{
     .footer__titulo {
         padding: .5rem;
     }
-    .header__navbar {
+    .header__navbar, .footer__navbar {
         flex-direction: row;
         justify-content: right;
         margin-right: 1rem;
     }
-    .navbar__enlace{
+    .navbar__enlace, .navbar__enlaceFooter{
         display: auto;
         width: auto;
 
+    }
+    .header__texto {
+        margin-top: 12rem;
     }
 }
 
@@ -223,18 +260,7 @@ a{
     margin: auto auto 5rem auto;
     
 }
-.main__bg--fisica {
-    background-image: url('../img/Fisica.jpg');
-    height: 40rem;
-}
-.main__bg--index {
-    background-image: url('../img/Programacion-banner.jpg');
-    height: 40rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
 
-}
 .main__bg--dark {
     width: 100%;
     height: 100%;
@@ -244,9 +270,7 @@ a{
     justify-content: center;
 }
 .main__titulo {
-    color: white;
-    text-transform: uppercase;
-    font-weight: 550;
+
 }
 .main__subtitulo,
 .main__formulas {
