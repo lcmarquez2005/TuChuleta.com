@@ -90,7 +90,9 @@ a{
     align-items: center;
     justify-content: center;
 }
-
+.min-margin {
+    margin: auto 3px;
+}
 .centrar-texto-always {
     text-align: center;
 }
@@ -291,10 +293,9 @@ a{
     flex-direction: column;
     justify-content: center;
     text-align: justify;
-    width: min(70rem, 98%);/*! dsfsd */
+    width: min(70rem, 100%);/*! dsfsd */
 }
 .main__imagen {
-
     width: 100%;
     position: center;
 }
